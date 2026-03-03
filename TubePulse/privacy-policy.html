@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubePulse - Privacy Policy</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.7; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin-top: 32px; }
+    .date { color: #888; font-size: 14px; margin-bottom: 32px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <h1>TubePulse Privacy Policy</h1>
+  <p class="date">Last updated: February 23, 2026</p>
+
+  <h2>Overview</h2>
+  <p>TubePulse is a Chrome extension that analyzes YouTube video comments to provide content improvement suggestions. We are committed to protecting your privacy.</p>
+
+  <h2>Data Collection</h2>
+  <p>TubePulse collects the following data:</p>
+  <ul>
+    <li><strong>Anonymous User ID</strong>: A random UUID is generated locally and stored on your device to track monthly usage quotas. This ID is not linked to any personal information.</li>
+    <li><strong>Email (optional)</strong>: If you sign up for the Pro waitlist, your email address is sent to and stored on our server. It is used solely to notify you when Pro launches.</li>
+    <li>We do not use cookies or tracking technologies</li>
+    <li>We do not have user accounts or registration</li>
+  </ul>
+
+  <h2>Data Processing</h2>
+  <p>When you click "Analyze Comments", the following happens:</p>
+  <ul>
+    <li>Basic video information (title, channel name, view count) is extracted from the page DOM</li>
+    <li>The video ID is sent to our API server, which fetches comments via the <strong>YouTube Data API</strong></li>
+    <li>Comments and video metadata are forwarded to the DeepSeek AI API for analysis</li>
+    <li>The AI-generated analysis results are displayed to you</li>
+    <li>Analysis snapshots (problem titles, counts — not full comments) are stored on our server to enable the Trend feature</li>
+  </ul>
+
+  <h2>Local Storage</h2>
+  <p>TubePulse uses Chrome's local storage (chrome.storage.local) to save:</p>
+  <ul>
+    <li>Your most recent analysis results (so they persist when you reopen the popup)</li>
+    <li>Your analysis history (up to 20 entries)</li>
+  </ul>
+  <p>This data is stored entirely on your device and is never transmitted to any server. You can clear this data at any time using the "Clear All" button in the History section.</p>
+
+  <h2>Third-Party Services</h2>
+  <p>TubePulse uses the following third-party services:</p>
+  <ul>
+    <li><strong>YouTube Data API</strong> — to fetch video comments and metadata for analysis. Our use complies with the <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service">YouTube API Services Terms of Service</a>. Also see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
+    <li><strong>DeepSeek API</strong> — for AI-powered comment analysis. Comment text and basic video information are sent to DeepSeek's servers for processing. Please refer to <a href="https://www.deepseek.com/privacy">DeepSeek's Privacy Policy</a> for their data handling practices.</li>
+  </ul>
+
+  <h2>Permissions</h2>
+  <p>TubePulse requests the following Chrome permissions:</p>
+  <ul>
+    <li><strong>activeTab</strong> — to read basic video information (title, channel name, view count) from the current YouTube page when you trigger an analysis</li>
+    <li><strong>storage</strong> — to save analysis history, preferences, and anonymous usage ID locally on your device</li>
+    <li><strong>sidePanel</strong> — to display the analysis interface in Chrome's side panel alongside the YouTube video</li>
+  </ul>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated date.</p>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this privacy policy, please contact us at: xiezhongyan2015@gmail.com</p>
+</body>
+</html>

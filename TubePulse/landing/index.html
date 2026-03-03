@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubePulse - Turn YouTube Comments into Actionable Insights</title>
+  <meta name="description" content="AI-powered Chrome extension that analyzes YouTube comments and compares your video against competitors. Get actionable improvement suggestions backed by real viewer feedback.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.7; }
+
+    /* Hero */
+    .hero {
+      min-height: 80vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 60px 24px;
+      background: linear-gradient(135deg, #f0f4ff 0%, #faf0ff 100%);
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px); font-weight: 800; letter-spacing: -1px;
+      background: linear-gradient(135deg, #4285f4, #7c3aed);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero .tagline { font-size: clamp(16px, 2.5vw, 22px); color: #555; max-width: 600px; margin: 16px auto 32px; }
+    .cta {
+      display: inline-block; padding: 16px 40px; font-size: 18px; font-weight: 700; color: #fff;
+      background: linear-gradient(135deg, #4285f4, #7c3aed); border-radius: 12px; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3); transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(124, 58, 237, 0.4); }
+    .cta-sub { font-size: 14px; color: #888; margin-top: 12px; }
+
+    /* Features */
+    .features { max-width: 900px; margin: 80px auto; padding: 0 24px; }
+    .features h2 { text-align: center; font-size: 28px; margin-bottom: 48px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; }
+    .feature-card {
+      padding: 28px; border-radius: 14px; background: #fff;
+      border: 1px solid #eef0f2; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .feature-icon { font-size: 32px; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #666; }
+
+    /* How it works */
+    .how { max-width: 700px; margin: 80px auto; padding: 0 24px; }
+    .how h2 { text-align: center; font-size: 28px; margin-bottom: 40px; }
+    .step { display: flex; gap: 20px; margin-bottom: 28px; align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, #4285f4, #7c3aed);
+      color: #fff; font-weight: 700; font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step h3 { font-size: 16px; margin-bottom: 4px; }
+    .step p { font-size: 14px; color: #666; }
+
+    /* CTA bottom */
+    .bottom-cta {
+      text-align: center; padding: 80px 24px;
+      background: linear-gradient(135deg, #f0f4ff 0%, #faf0ff 100%);
+    }
+    .bottom-cta h2 { font-size: 28px; margin-bottom: 20px; }
+
+    /* Footer */
+    footer { text-align: center; padding: 24px; font-size: 13px; color: #aaa; }
+    footer a { color: #888; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>TubePulse</h1>
+    <p class="tagline">AI analyzes your YouTube comments and compares you against competitors — so you know exactly what to improve next.</p>
+    <!-- TODO: Replace with actual Chrome Web Store extension URL after publishing -->
+    <a class="cta" href="https://chromewebstore.google.com" target="_blank">Add to Chrome - Free</a>
+    <p class="cta-sub">No sign-up required. Works instantly.</p>
+  </section>
+
+
+  <!-- Features -->
+  <section class="features">
+    <h2>What You Get</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F50D;</div>
+        <h3>Comment Analysis</h3>
+        <p>AI reads your comments, finds the top complaints, and gives you specific fixes — not vague advice.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4CA;</div>
+        <h3>Niche Insights</h3>
+        <p>Automatically finds similar videos, compares their comments to yours, and shows what your competitors do better.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4AC;</div>
+        <h3>Evidence-Based</h3>
+        <p>Every suggestion comes with real viewer comments and like counts as proof. No guesswork.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div><h3>Open any YouTube video</h3><p>Navigate to your video or any video you want to analyze.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div><h3>Click the extension</h3><p>Choose "Analyze Comments" or "Niche Insights" — one click.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div><h3>Get actionable results</h3><p>AI delivers specific suggestions backed by real comments, sorted by popularity.</p></div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bottom-cta">
+    <h2>Stop guessing. Start improving.</h2>
+    <!-- TODO: Replace with actual Chrome Web Store extension URL after publishing -->
+    <a class="cta" href="https://chromewebstore.google.com" target="_blank">Add to Chrome - Free</a>
+  </section>
+
+  <footer>
+    <p>TubePulse &copy; 2026 &nbsp;|&nbsp; <a href="./privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>

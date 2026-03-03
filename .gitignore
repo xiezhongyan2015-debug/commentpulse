@@ -1,0 +1,64 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+.Rhistory
+.claude/
+
+# Dependency/build output
+**/node_modules/
+dist/
+build/
+coverage/
+
+# Runtime and local caches
+.wrangler/
+**/.wrangler/
+.vercel/
+**/.vercel/
+*.log
+
+# Secrets and local env
+.env
+.env.*
+!.env.example
+*.local.json
+*.local.env
+*credentials*.json
+*client_secret*.json
+*secret*.json
+*token*.json
+*private*.key
+*.pem
+
+# Keep public examples
+!outreach-tubepulse/credentials.example.json
+!client_secret.example.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Archive artifacts
+*.zip
+
+# Worker backend (private — billing, prompts, admin logic)
+**/worker/
+
+# Internal dev docs (private)
+TubePulse/DEV_LOG.md
+TubePulse/PRODUCT_DOC.md
+TubePulse/TODO.md
+TubePulse/UPGRADE_PLAN.md
+TubePulse/POLISH_CHECKLIST.md
+TubePulse/REVIEW_ISSUES.md
+TubePulse/PROMPT_OPTIMIZATION_PLAN.md
+
+# Workspace folders not part of commentpulse release
+BiliPulse/
+marketing/
+outreach/
+outreach-tubepulse/
+privacy-site/
+scripts/

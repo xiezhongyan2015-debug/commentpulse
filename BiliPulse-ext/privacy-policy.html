@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiliPulse - 隐私政策</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.7; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin-top: 32px; }
+    .date { color: #888; font-size: 14px; margin-bottom: 32px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <h1>BiliPulse 隐私政策</h1>
+  <p class="date">最后更新：2026年2月23日</p>
+
+  <h2>概述</h2>
+  <p>BiliPulse 是一款 Chrome 扩展，通过 AI 分析B站视频评论和弹幕，为UP主提供内容改进建议。我们致力于保护您的隐私。</p>
+
+  <h2>数据收集</h2>
+  <ul>
+    <li><strong>匿名用户ID</strong>：在您的设备上本地生成一个随机 UUID，用于追踪每月用量配额。该ID不与任何个人信息关联。</li>
+    <li><strong>邮箱（可选）</strong>：如果您注册 Pro 体验，邮箱会发送至我们的服务器，仅用于通知 Pro 上线。</li>
+    <li>我们不使用 Cookie 或追踪技术</li>
+    <li>我们没有用户账号或注册系统</li>
+  </ul>
+
+  <h2>数据处理</h2>
+  <p>当您点击「分析评论」时：</p>
+  <ul>
+    <li>评论内容从B站页面 DOM（Shadow DOM）中提取</li>
+    <li>视频基本信息（标题、UP主、播放量）从页面 DOM 中提取</li>
+    <li>评论和视频信息发送至我们的 API 服务器，由 DeepSeek AI 进行分析</li>
+    <li>AI 生成的分析结果展示给您</li>
+    <li>分析快照（问题标题和计数，不含完整评论）存储在服务器上以支持趋势追踪功能</li>
+  </ul>
+  <p>当您点击「弹幕分析」时：</p>
+  <ul>
+    <li>通过B站公开接口（api.bilibili.com）获取视频 cid</li>
+    <li>通过B站弹幕接口（comment.bilibili.com）获取弹幕 XML 数据</li>
+    <li>弹幕数据在本地聚合后发送至 AI 进行分析</li>
+  </ul>
+
+  <h2>本地存储</h2>
+  <p>BiliPulse 使用 chrome.storage.local 保存：</p>
+  <ul>
+    <li>最近一次分析结果（重新打开时恢复显示）</li>
+    <li>分析历史记录（最多20条）</li>
+  </ul>
+  <p>这些数据完全存储在您的设备上，不会传输到任何服务器。您可以随时通过「清空」按钮删除。</p>
+
+  <h2>第三方服务</h2>
+  <ul>
+    <li><strong>B站公开接口</strong> — 获取弹幕数据和视频 cid，用于弹幕分析功能。</li>
+    <li><strong>DeepSeek API</strong> — 用于 AI 评论分析。评论文本和基本视频信息会发送至 DeepSeek 服务器处理。详见 <a href="https://www.deepseek.com/privacy">DeepSeek 隐私政策</a>。</li>
+  </ul>
+
+  <h2>权限说明</h2>
+  <ul>
+    <li><strong>activeTab</strong> — 用户触发分析时，从当前B站视频页面读取视频信息和评论内容</li>
+    <li><strong>storage</strong> — 在设备本地保存分析历史、偏好设置和匿名用量ID</li>
+    <li><strong>sidePanel</strong> — 在 Chrome 侧边栏中显示分析界面</li>
+  </ul>
+
+  <h2>政策变更</h2>
+  <p>我们可能会不时更新本隐私政策，更新后会在此页面反映并标注新日期。</p>
+
+  <h2>联系方式</h2>
+  <p>如有隐私相关问题，请联系：xiezhongyan2015@gmail.com</p>
+</body>
+</html>

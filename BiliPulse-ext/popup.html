@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BiliPulse</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>BiliPulse</h1>
+      <p class="slogan">AI 驱动的B站评论与弹幕洞察</p>
+    </header>
+
+    <main>
+      <div id="onboarding" class="onboarding hidden">
+        <p>打开B站视频页面，然后点击 <b>分析评论</b> 开始使用。</p>
+        <a id="dismissOnboarding" class="onboarding-dismiss">知道了</a>
+      </div>
+
+      <div class="btn-group">
+        <button id="analyzeBtn" class="btn-primary">分析评论</button>
+        <div class="btn-row-secondary">
+          <button id="danmakuBtn" class="btn-secondary">弹幕分析</button>
+          <button id="trendBtn" class="btn-secondary">趋势追踪</button>
+        </div>
+        <button id="competitorBtn" class="btn-pro">竞品对比 <span id="proLock" class="pro-badge">PRO</span></button>
+      </div>
+
+      <div id="proHint" class="pro-hint">
+        <span>解锁竞品对比 · 无限分析 · 趋势周报</span>
+        <a id="proHintLink">了解 Pro →</a>
+      </div>
+
+      <div id="proModal" class="pro-modal hidden">
+        <div class="pro-modal-content">
+          <p class="pro-modal-title">解锁竞品对比</p>
+          <p class="pro-modal-desc">对比同类视频数据，发现内容差距，获取改进建议。留下联系方式即可免费体验。</p>
+          <div class="pro-form">
+            <input id="proEmail" type="email" placeholder="邮箱" class="pro-input">
+            <button id="proTrialBtn" class="pro-submit">免费体验 — 7天 / 5次</button>
+          </div>
+          <p id="proMsg" class="pro-msg hidden"></p>
+          <a id="proClose" class="pro-close">以后再说</a>
+        </div>
+      </div>
+
+      <div id="usageBar" class="usage-bar hidden">
+        <span id="usageText"></span>
+        <div class="usage-track"><div id="usageFill" class="usage-fill"></div></div>
+      </div>
+
+      <div id="usageLimitMsg" class="usage-limit-msg hidden">
+        <p>本月 <b>50 次免费分析</b> 已用完。</p>
+        <button id="usageLimitUpgrade" class="usage-limit-btn">获取更多次数</button>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p id="loadingText">正在分析...</p>
+        <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+
+      <div id="results" class="results hidden"></div>
+
+      <div id="upgradeBanner" class="upgrade-banner hidden">
+        <p>想要更深入的洞察？</p>
+        <span>解锁趋势追踪、周报和无限分析</span>
+      </div>
+
+      <div id="historyArea" class="history-area hidden">
+        <div class="history-header">
+          <span class="history-title">历史记录</span>
+          <a id="clearHistoryBtn" class="clear-history-link">清空</a>
+        </div>
+        <div id="historyList" class="history-list"></div>
+      </div>
+
+      <div id="trendArea" class="history-area hidden">
+        <div class="history-header">
+          <a id="trendBackBtn" class="history-back">← 返回</a>
+          <span class="history-title">趋势追踪</span>
+          <a id="clearTrendBtn" class="clear-history-link">清空</a>
+        </div>
+        <button id="improvementBtn" class="btn-primary hidden" style="margin-bottom:10px">查看改进情况</button>
+        <div id="improvementResult" class="hidden"></div>
+        <div id="trendContent"></div>
+      </div>
+    </main>
+
+    <div class="footer-links">
+      <a id="historyLink" class="footer-link">历史记录</a>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

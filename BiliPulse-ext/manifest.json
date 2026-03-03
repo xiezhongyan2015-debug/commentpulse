@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "BiliPulse",
+  "description": "AI驱动的B站评论与弹幕分析，帮UP主从观众反馈中获取可执行的改进建议",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "storage", "sidePanel"],
+  "host_permissions": [
+    "https://your-bilipulse-api.example.com/*",
+    "https://comment.bilibili.com/*",
+    "https://api.bilibili.com/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.bilibili.com/video/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

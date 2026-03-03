@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubePulse</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TubePulse</h1>
+      <p class="slogan">Turn viewer feedback into actionable improvements</p>
+    </header>
+
+    <main>
+      <div id="onboarding" class="onboarding hidden">
+        <p>Open a YouTube video, then click <b>Analyze Comments</b> to get started.</p>
+        <a id="dismissOnboarding" class="onboarding-dismiss">Got it</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="btn-group">
+        <button id="analyzeBtn" class="btn-primary">Analyze Comments</button>
+        <div class="btn-row-secondary">
+          <button id="trendBtn" class="btn-secondary">Trend</button>
+          <button id="competitorBtn" class="btn-pro">Niche Insights <span id="proLock" class="pro-badge">PRO</span></button>
+        </div>
+      </div>
+
+      <div id="proHint" class="pro-hint">
+        <span>Unlock Niche Insights · Unlimited Analyses · Weekly Reports</span>
+        <a id="proHintLink">Learn about Pro →</a>
+      </div>
+
+      <!-- Pro trial modal -->
+      <div id="proModal" class="pro-modal hidden">
+        <div class="pro-modal-content">
+          <p class="pro-modal-title">Unlock Niche Insights</p>
+          <p class="pro-modal-desc">Compare your video against competitors, discover content gaps, and get data-driven improvement suggestions.</p>
+          <div class="pro-form">
+            <input id="proEmail" type="email" placeholder="Email" class="pro-input">
+            <button id="proTrialBtn" class="btn-primary">Try Free — 7 Days / 5 Uses</button>
+          </div>
+          <p id="proMsg" class="pro-msg hidden"></p>
+          <a id="proClose" class="pro-close">Maybe later</a>
+        </div>
+      </div>
+
+      <div id="usageBar" class="usage-bar hidden">
+        <span id="usageText"></span>
+        <div class="usage-track"><div id="usageFill" class="usage-fill"></div></div>
+      </div>
+
+      <div id="usageLimitMsg" class="usage-limit-msg hidden">
+        <p>You've used all your <b>free analyses</b> this month.</p>
+        <button id="usageLimitUpgrade" class="usage-limit-btn">Get More Analyses</button>
+      </div>
+
+      <div id="videoContext" class="video-context hidden"></div>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p id="loadingText">Analyzing comments...</p>
+        <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+
+      <div id="results" class="results hidden"></div>
+
+      <div id="upgradeBanner" class="upgrade-banner hidden" onclick="document.getElementById('proModal').classList.remove('hidden')">
+        <p>Want deeper insights?</p>
+        <span>Unlock trend tracking, weekly reports & unlimited analyses with Pro</span>
+      </div>
+
+      <!-- History -->
+      <div id="historyArea" class="history-area hidden">
+        <div class="history-header">
+          <span class="history-title">History</span>
+          <a id="clearHistoryBtn" class="clear-history-link">Clear All</a>
+        </div>
+        <div id="historyList" class="history-list"></div>
+      </div>
+
+      <!-- Trend -->
+      <div id="trendArea" class="history-area hidden">
+        <div class="history-header">
+          <a id="trendBackBtn" class="history-back">← Back</a>
+          <span class="history-title">Trend</span>
+          <a id="clearTrendBtn" class="clear-history-link">Clear All</a>
+        </div>
+        <button id="improvementBtn" class="btn-primary hidden" style="margin-bottom:10px">Check Improvement</button>
+        <div id="improvementResult" class="hidden"></div>
+        <div id="trendContent"></div>
+      </div>
+    </main>
+
+    <div class="footer-links">
+      <a id="historyLink" class="footer-link">History</a>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
