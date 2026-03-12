@@ -4,6 +4,16 @@ AI-powered comment analysis for content creators. Stop guessing what your audien
 
 CommentPulse reads hundreds of comments on your videos, quantifies recurring problems, and gives you specific, evidence-based suggestions to improve your content.
 
+[中文说明](README.zh-CN.md) | [Open Source Scope](OPEN_SOURCE_SCOPE.md) | [Security](SECURITY.md) | [Contributing](CONTRIBUTING.md) | [Trademark](TRADEMARK.md)
+
+## 中文说明
+
+- 这个仓库现在公开的是 `TubePulse/` 和 `BiliPulse-ext/` 两个浏览器插件客户端。
+- 已公开内容包括界面代码、页面数据提取、本地存储、打包脚本和商店素材脚本。
+- 暂不公开的部分包括后端接口实现、AI 提示词、计费、限频、反滥用处理和生产密钥。
+- 如果你想自己跑，可以直接复制 `config.example.js` 接到你自己的后端。
+- 如果你想先看清楚公开范围，直接看 [OPEN_SOURCE_SCOPE.md](OPEN_SOURCE_SCOPE.md)。
+
 ## Plugins
 
 | Plugin | Platform | Directory | Install |
@@ -151,6 +161,7 @@ Your backend needs to implement these endpoints:
 | `DELETE` | `/trend` | Clear trend data. Header: `X-User-Id` |
 | `POST` | `/waitlist` | Submit waitlist email. Body: `{ email }` |
 | `POST` | `/trial/start` | Activate trial. Header: `X-User-Id` |
+| `POST` | `/events` | Optional. Receives client events like `panel_open`, `analyze_click`, `error` |
 
 BiliPulse additionally requires:
 
@@ -166,6 +177,17 @@ BiliPulse additionally requires:
 | `OFFICIAL_SITE_URL` | Your site URL (for links in the UI) |
 | `BRAND_NAME` | Display name shown in the extension |
 | `MODE` | `selfhost` or `official` |
+| `SEND_EXTENDED_HEADERS` | Optional. When `true`, also sends locale / OS / extension version / client request id headers |
+| `ENABLE_EVENTS` | Optional. When `true`, sends client telemetry to `/events` |
+
+TubePulse may also send these optional headers on API requests:
+
+- `X-User-Locale`
+- `X-User-OS`
+- `X-Extension-Version`
+- `X-Client-Request-Id`
+
+If your backend does not use them, it can safely ignore them. The optional `/events` route can also be omitted without breaking core analysis features. If you support request tracing, you can return `X-Request-Id` in the response headers.
 
 ## Project Structure
 

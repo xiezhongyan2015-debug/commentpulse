@@ -1,23 +1,34 @@
 # Open Source Scope
 
-This project is maintained as open-core.
+This repo currently uses an open-core model:
+the extension client is public, while the hosted backend stays private.
 
 ## Public
 
-- `BiliPulse-ext/` plugin client code and assets
-- `TubePulse/` plugin client code and assets
-- Open-source documentation and policy files
+- `TubePulse/` client code and assets
+- `BiliPulse-ext/` client code and assets
+- UI code, page data extraction, local storage logic
+- Build scripts, packaging scripts, and store asset scripts
+- Public docs such as `README`, `SECURITY`, `CONTRIBUTING`, and `TRADEMARK`
+- Config templates for self-hosting
 
 ## Private
 
-- Backend worker code (API logic, AI prompts, billing, rate limiting)
-- Production secrets and tokens
-- Billing implementation details and webhook credentials
-- Internal admin tooling
+- Backend worker code and API implementation
+- AI prompts and hosted analysis workflow
+- Billing, trial, rate-limit, and abuse prevention logic
+- Production secrets, tokens, and webhook credentials
+- Internal admin tools and operating data
 - Outreach execution data and sender credentials
-- Abuse prevention internals tied to production operations
+
+## What This Means
+
+- You can inspect the extension, fork it, and modify the client code.
+- You can point the client to your own backend and self-host it.
+- You can submit pull requests for UI, extraction logic, docs, and related client-side work.
+- The official hosted API is not included in this repo.
 
 ## Why
 
-The hosted service includes operating costs (LLM/API usage, monitoring, abuse prevention, support).
-Open client code improves transparency and contribution, while hosted APIs remain a paid service.
+Opening the client code makes the product easier to inspect, trust, and extend.
+The hosted service still has real operating cost and production-only code that is tied to billing, monitoring, and abuse control, so that part stays private for now.

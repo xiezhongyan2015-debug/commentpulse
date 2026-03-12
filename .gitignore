@@ -17,6 +17,10 @@ coverage/
 **/.wrangler/
 .vercel/
 **/.vercel/
+.playwright-cli/
+output/
+**/.output/
+**/pictures/store/generated/
 *.log
 
 # Secrets and local env
